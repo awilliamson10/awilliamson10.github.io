@@ -139,6 +139,7 @@ header {
 }
 
 .post-icon {
+  display: block;
   text-align: center;
   margin: 0 0 2rem 0;
   width: 100%;
@@ -148,7 +149,9 @@ header {
   width: 72px;
   height: 72px;
   object-fit: contain;
-  display: inline-block;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .post-icon-emoji {
