@@ -17,13 +17,20 @@ layout: default
     {% if site.github_username %}
     <a href="https://github.com/{{ site.github_username }}" aria-label="GitHub">GitHub</a>
     {% endif %}
-    <a href="#" aria-label="Subscribe">Subscribe</a>
+    <a href="{{ '/publications/' | relative_url }}" aria-label="Publications">Publications</a>
   </nav>
 </header>
 
 <main>
   <p class="welcome">{{ site.description }}</p>
+  
+  <div class="bio">
+    <p>I'm a Senior Machine Learning Engineer at FanDuel on the AI Solutions team. Previously, I was a software engineer at PreciseTarget working on machine learning, data engineering, and semantic networks using large scale models, and before that, a postbaccalaureate researcher at the National Institutes of Health focused on applied principles of combinatorial set probability using genome-wide association data in the Clinical Translational Neuroscience group led by Madhav Thambisetty.</p>
+    
+    <p>I studied computer science and chemistry at Indiana State University while working on differential gene expression analysis of cardiomycytes under Kris Schwab and Jeff Kinne.</p>
+  </div>
 
+  <h2 class="section-title">Writing</h2>
   <div class="posts">
     {% for post in site.posts %}
     <article class="post-item">

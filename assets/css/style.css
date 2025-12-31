@@ -80,8 +80,24 @@ header {
 
 .welcome {
   font-size: 1.1rem;
-  margin-bottom: 3rem;
+  margin-bottom: 1.5rem;
   color: var(--muted-color);
+}
+
+.bio {
+  margin-bottom: 3rem;
+  line-height: 1.7;
+}
+
+.bio p {
+  margin-bottom: 1rem;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  margin-top: 3rem;
 }
 
 .posts {
@@ -189,6 +205,38 @@ header {
   margin-left: auto;
   margin-right: auto;
   text-align: left;
+}
+
+.publications-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.publications-content h1 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.publications-list {
+  list-style: decimal;
+  padding-left: 1.5rem;
+  line-height: 1.8;
+}
+
+.publications-list li {
+  margin-bottom: 1.5rem;
+}
+
+.publications-list a {
+  color: var(--link-color);
+  text-decoration: none;
+  word-break: break-all;
+}
+
+.publications-list a:hover {
+  text-decoration: underline;
 }
 
 .post-content h2 {
