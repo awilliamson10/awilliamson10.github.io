@@ -8,16 +8,16 @@ layout: default
     <h1>{{ site.title }}</h1>
   </div>
   <nav class="social">
-    {% if site.rss %}
-    <a href="{{ '/feed.xml' | relative_url }}" aria-label="RSS Feed">RSS</a>
+    {% if site.github_username %}
+    <a href="https://github.com/{{ site.github_username }}">GitHub</a>
     {% endif %}
     {% if site.twitter_username %}
-    <a href="https://twitter.com/{{ site.twitter_username }}" aria-label="Twitter">X</a>
+    <a href="https://twitter.com/{{ site.twitter_username }}">X</a>
     {% endif %}
-    {% if site.github_username %}
-    <a href="https://github.com/{{ site.github_username }}" aria-label="GitHub">GitHub</a>
+    <a href="{{ '/publications/' | relative_url }}">Publications</a>
+    {% if site.rss %}
+    <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
     {% endif %}
-    <a href="{{ '/publications/' | relative_url }}" aria-label="Publications">Publications</a>
   </nav>
 </header>
 
@@ -35,16 +35,8 @@ layout: default
     {% for post in site.posts %}
     <article class="post-item">
       <a href="{{ post.url | relative_url }}" class="post-link">{{ post.title }}</a>
-      <span class="reading-time">
-        {% assign words = post.content | number_of_words %}
-        {% if words < 360 %}
-          1 min
-        {% else %}
-          {{ words | divided_by: 180 }} min
-        {% endif %}
-      </span>
+      <span class="reading-time">{{ post.content | number_of_words | divided_by: 180 | at_least: 1 }} min</span>
     </article>
     {% endfor %}
   </div>
 </main>
-

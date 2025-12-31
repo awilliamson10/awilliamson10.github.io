@@ -8,27 +8,27 @@ layout: default
     <h1><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
   </div>
   <nav class="social">
-    {% if site.rss %}
-    <a href="{{ '/feed.xml' | relative_url }}" aria-label="RSS Feed">RSS</a>
+    {% if site.github_username %}
+    <a href="https://github.com/{{ site.github_username }}">GitHub</a>
     {% endif %}
     {% if site.twitter_username %}
-    <a href="https://twitter.com/{{ site.twitter_username }}" aria-label="Twitter">X</a>
+    <a href="https://twitter.com/{{ site.twitter_username }}">X</a>
     {% endif %}
-    {% if site.github_username %}
-    <a href="https://github.com/{{ site.github_username }}" aria-label="GitHub">GitHub</a>
+    <a href="{{ '/publications/' | relative_url }}">Publications</a>
+    {% if site.rss %}
+    <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
     {% endif %}
-    <a href="#" aria-label="Subscribe">Subscribe</a>
   </nav>
 </header>
 
 <main class="post-content">
-  <a href="{{ '/' | relative_url }}" class="back-link">← Back to writing</a>
+  <a href="{{ '/' | relative_url }}" class="back-link">← Back</a>
   
   {% if page.icon %}
   <div class="post-icon">
     {% assign icon_ext = page.icon | split: '.' | last | downcase %}
-    {% if icon_ext == 'jpg' or icon_ext == 'jpeg' or icon_ext == 'png' or icon_ext == 'webp' or icon_ext == 'gif' or icon_ext == 'svg' or page.icon contains '/' %}
-      <img src="{{ page.icon | relative_url }}" alt="{{ page.title }}" class="post-icon-image">
+    {% if icon_ext == 'jpg' or icon_ext == 'jpeg' or icon_ext == 'png' or icon_ext == 'webp' or icon_ext == 'gif' or icon_ext == 'svg' %}
+      <img src="{{ page.icon | relative_url }}" alt="" class="post-icon-image">
     {% else %}
       <span class="post-icon-emoji">{{ page.icon }}</span>
     {% endif %}
@@ -38,14 +38,13 @@ layout: default
   <div class="post-header">
     <h1>{{ page.title }}</h1>
     <div class="post-meta">
-      {% if page.date %}
-      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%m.%d.%y" }}</time>
-      {% endif %}
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time>
+      <span>·</span>
       {% assign words = page.content | number_of_words %}
       {% if words < 360 %}
-      <span> · 1 min read</span>
+      <span>1 min read</span>
       {% else %}
-      <span> · {{ words | divided_by: 180 }} min read</span>
+      <span>{{ words | divided_by: 180 }} min read</span>
       {% endif %}
     </div>
   </div>
@@ -54,4 +53,3 @@ layout: default
     {{ content }}
   </article>
 </main>
-
