@@ -6,7 +6,6 @@ permalink: /publications/
 
 <header>
   <div class="profile">
-    <div class="profile-picture"></div>
     <h1><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
   </div>
   <nav class="social">
@@ -25,8 +24,6 @@ permalink: /publications/
 
 <main class="publications-content">
   <a href="{{ '/' | relative_url }}" class="back-link">← Back</a>
-  
-  <h1>Publications</h1>
 
   <ol class="publications-list">
     <li>
