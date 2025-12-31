@@ -27,7 +27,12 @@ layout: default
   <div class="posts">
     {% for post in site.posts %}
     <article class="post-item">
-      <a href="{{ post.url | relative_url }}" class="post-link">{{ post.title }}</a>
+      <div class="post-preview">
+        {% if post.icon %}
+        <span class="post-item-icon">{{ post.icon }}</span>
+        {% endif %}
+        <a href="{{ post.url | relative_url }}" class="post-link">{{ post.title }}</a>
+      </div>
       <span class="reading-time">
         {% assign words = post.content | number_of_words %}
         {% if words < 360 %}
