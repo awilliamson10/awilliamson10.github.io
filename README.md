@@ -42,8 +42,15 @@ Each post should start with front matter:
 ---
 title: Your Post Title
 date: YYYY-MM-DD
+icon: ✨
 ---
 ```
+
+**Icons**: You can add an `icon` field to your post front matter. This can be:
+- An emoji: `icon: ✨` or `icon: 🌲`
+- An image path: `icon: /assets/art/tree.webp` (supports jpg, png, webp, gif, svg)
+
+The icon will appear centered above the post title and next to the post title on the homepage.
 
 Then write your content in Markdown below.
 

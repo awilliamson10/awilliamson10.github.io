@@ -29,7 +29,12 @@ layout: default
     <article class="post-item">
       <div class="post-preview">
         {% if post.icon %}
-        <span class="post-item-icon">{{ post.icon }}</span>
+          {% assign icon_ext = post.icon | split: '.' | last | downcase %}
+          {% if icon_ext == 'jpg' or icon_ext == 'jpeg' or icon_ext == 'png' or icon_ext == 'webp' or icon_ext == 'gif' or icon_ext == 'svg' or post.icon contains '/' %}
+            <img src="{{ post.icon | relative_url }}" alt="{{ post.title }}" class="post-item-icon post-item-icon-image">
+          {% else %}
+            <span class="post-item-icon">{{ post.icon }}</span>
+          {% endif %}
         {% endif %}
         <a href="{{ post.url | relative_url }}" class="post-link">{{ post.title }}</a>
       </div>

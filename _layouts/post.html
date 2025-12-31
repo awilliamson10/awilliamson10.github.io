@@ -33,7 +33,14 @@ layout: default
   <a href="{{ '/' | relative_url }}" class="back-link">← Back to writing</a>
   
   {% if page.icon %}
-  <div class="post-icon">{{ page.icon }}</div>
+  <div class="post-icon">
+    {% assign icon_ext = page.icon | split: '.' | last | downcase %}
+    {% if icon_ext == 'jpg' or icon_ext == 'jpeg' or icon_ext == 'png' or icon_ext == 'webp' or icon_ext == 'gif' or icon_ext == 'svg' or page.icon contains '/' %}
+      <img src="{{ page.icon | relative_url }}" alt="{{ page.title }}" class="post-icon-image">
+    {% else %}
+      <span class="post-icon-emoji">{{ page.icon }}</span>
+    {% endif %}
+  </div>
   {% endif %}
   
   <div class="post-header">
