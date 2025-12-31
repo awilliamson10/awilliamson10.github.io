@@ -22,14 +22,6 @@ layout: default
 </header>
 
 <main class="post-content">
-  <div class="breadcrumb">
-    <a href="{{ '/' | relative_url }}">{{ site.title | downcase | replace: ' ', '.' }}</a>
-    <span class="breadcrumb-separator">/</span>
-    <span>writing</span>
-    <span class="breadcrumb-separator">/</span>
-    <span>{{ page.url | remove: '/' | remove: '.html' }}</span>
-  </div>
-  
   <a href="{{ '/' | relative_url }}" class="back-link">← Back to writing</a>
   
   {% if page.icon %}
