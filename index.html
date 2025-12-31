@@ -1,0 +1,43 @@
+---
+layout: default
+---
+
+<header>
+  <div class="profile">
+    <div class="profile-picture"></div>
+    <h1>{{ site.title }}</h1>
+  </div>
+  <nav class="social">
+    {% if site.rss %}
+    <a href="{{ '/feed.xml' | relative_url }}" aria-label="RSS Feed">RSS</a>
+    {% endif %}
+    {% if site.twitter_username %}
+    <a href="https://twitter.com/{{ site.twitter_username }}" aria-label="Twitter">X</a>
+    {% endif %}
+    {% if site.github_username %}
+    <a href="https://github.com/{{ site.github_username }}" aria-label="GitHub">GitHub</a>
+    {% endif %}
+    <a href="#" aria-label="Subscribe">Subscribe</a>
+  </nav>
+</header>
+
+<main>
+  <p class="welcome">{{ site.description }}</p>
+
+  <div class="posts">
+    {% for post in site.posts %}
+    <article class="post-item">
+      <a href="{{ post.url | relative_url }}" class="post-link">{{ post.title }}</a>
+      <span class="reading-time">
+        {% assign words = post.content | number_of_words %}
+        {% if words < 360 %}
+          1 min
+        {% else %}
+          {{ words | divided_by: 180 }} min
+        {% endif %}
+      </span>
+    </article>
+    {% endfor %}
+  </div>
+</main>
+

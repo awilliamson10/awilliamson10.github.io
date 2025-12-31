@@ -1,0 +1,22 @@
+title: Your Name
+description: Welcome to my home on the Internet!
+baseurl: ""
+url: "https://awilliamson10.github.io"
+
+# Social links (update these with your actual links)
+github_username: awilliamson10
+twitter_username: ""
+rss: true
+
+# Plugins
+plugins:
+  - jekyll-feed
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+

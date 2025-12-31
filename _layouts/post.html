@@ -1,0 +1,33 @@
+---
+layout: default
+---
+
+<header>
+  <div class="profile">
+    <div class="profile-picture"></div>
+    <h1><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
+  </div>
+  <nav class="social">
+    {% if site.rss %}
+    <a href="{{ '/feed.xml' | relative_url }}" aria-label="RSS Feed">RSS</a>
+    {% endif %}
+    {% if site.twitter_username %}
+    <a href="https://twitter.com/{{ site.twitter_username }}" aria-label="Twitter">X</a>
+    {% endif %}
+    {% if site.github_username %}
+    <a href="https://github.com/{{ site.github_username }}" aria-label="GitHub">GitHub</a>
+    {% endif %}
+    <a href="#" aria-label="Subscribe">Subscribe</a>
+  </nav>
+</header>
+
+<main class="post-content">
+  <article>
+    <h1>{{ page.title }}</h1>
+    {% if page.date %}
+    <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time>
+    {% endif %}
+    {{ content }}
+  </article>
+</main>
+

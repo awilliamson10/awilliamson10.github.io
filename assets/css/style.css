@@ -1,0 +1,256 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --text-color: #1a1a1a;
+  --bg-color: #ffffff;
+  --link-color: #0066cc;
+  --border-color: #e0e0e0;
+  --muted-color: #666;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-color: #e0e0e0;
+    --bg-color: #1a1a1a;
+    --link-color: #66b3ff;
+    --border-color: #333;
+    --muted-color: #999;
+  }
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.profile-picture {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  flex-shrink: 0;
+}
+
+.profile h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.profile h1 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.profile h1 a:hover {
+  opacity: 0.8;
+}
+
+.social {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.social a {
+  color: var(--link-color);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.social a:hover {
+  text-decoration: underline;
+}
+
+.welcome {
+  font-size: 1.1rem;
+  margin-bottom: 3rem;
+  color: var(--muted-color);
+}
+
+.posts {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.post-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.post-item:last-child {
+  border-bottom: none;
+}
+
+.post-link {
+  color: var(--link-color);
+  text-decoration: none;
+  font-size: 1rem;
+  flex: 1;
+}
+
+.post-link:hover {
+  text-decoration: underline;
+}
+
+.reading-time {
+  color: var(--muted-color);
+  font-size: 0.9rem;
+  margin-left: 2rem;
+  white-space: nowrap;
+}
+
+.post-content {
+  max-width: 700px;
+}
+
+.post-content article {
+  line-height: 1.8;
+}
+
+.post-content h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.post-content time {
+  display: block;
+  color: var(--muted-color);
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
+}
+
+.post-content h2 {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.post-content h3 {
+  font-size: 1.25rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.post-content p {
+  margin-bottom: 1.5rem;
+}
+
+.post-content ul,
+.post-content ol {
+  margin-bottom: 1.5rem;
+  padding-left: 2rem;
+}
+
+.post-content li {
+  margin-bottom: 0.5rem;
+}
+
+.post-content code {
+  background-color: var(--border-color);
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  font-size: 0.9em;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+}
+
+.post-content pre {
+  background-color: var(--border-color);
+  padding: 1rem;
+  border-radius: 5px;
+  overflow-x: auto;
+  margin-bottom: 1.5rem;
+}
+
+.post-content pre code {
+  background: none;
+  padding: 0;
+}
+
+.post-content a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+.post-content a:hover {
+  text-decoration: underline;
+}
+
+.post-content blockquote {
+  border-left: 3px solid var(--border-color);
+  padding-left: 1rem;
+  margin-left: 0;
+  margin-bottom: 1.5rem;
+  color: var(--muted-color);
+}
+
+.post-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin: 1.5rem 0;
+}
+
+.post-content hr {
+  border: none;
+  border-top: 1px solid var(--border-color);
+  margin: 2rem 0;
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 1.5rem 1rem;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .post-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .reading-time {
+    margin-left: 0;
+  }
+
+  .post-content h1 {
+    font-size: 1.5rem;
+  }
+}
+
